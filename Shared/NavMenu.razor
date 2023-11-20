@@ -1,0 +1,41 @@
+﻿<header class="shadow sticky bg-blue-brand top-0 z-10">
+    <div class="px-4 sm:px-6 lg:px-8 py-4 mx-auto max-w-full lg:max-w-screen-2xl">
+        <div class="relative flex items-center justify-between">
+            <a aria-label="Company" title="Company" class="inline-flex items-center" href="/">
+                <h1 class="text-3xl text-white"><b>Pizza Express</b></h1>
+            </a>
+            <ul class="items-center hidden space-x-8 md:flex">
+                <li>
+                    <a aria-label="Our product" title="Our product" class="font-medium tracking-wide text-white transition-colors duration-200 hover:text-deep-purple-accent-400" href="./order">Order Now</a>
+                </li>
+                <li>
+                    <a aria-label="About" title="About" class="font-medium tracking-wide text-white transition-colors duration-200 hover:text-deep-purple-accent-400" href="./about">About</a>
+                </li>
+                <li>
+                    <a aria-label="Contact" title="Contact" class="font-medium tracking-wide text-white transition-colors duration-200 hover:text-deep-purple-accent-400" href="./contact">Contact</a>
+                </li>
+            </ul>
+            <div class="flex md:hidden">
+                <button aria-label="Open Menu" title="Open Menu" class="p-2 -mr-1 transition duration-200 rounded focus:shadow-outline hover:bg-neutral-700">
+                    <svg class="w-5 text-white" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M23,13H1c-0.6,0-1-0.4-1-1s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,13,23,13z"></path>
+                        <path fill="currentColor" d="M23,6H1C0.4,6,0,5.6,0,5s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,6,23,6z"></path>
+                        <path fill="currentColor" d="M23,20H1c-0.6,0-1-0.4-1-1s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,20,23,20z"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div style="height:10px;background:linear-gradient(to right, #fff 0 35%, var(--red) 35% 100%) left top / calc(100% + 2px) 4px, linear-gradient(to right, var(--blue) 0 100%) left bottom/calc((100% + 2px)/6) calc(100% - 4px);background-repeat:repeat-x"></div>
+</header>
+
+@code {
+    private bool collapseNavMenu = true;
+
+    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    private void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+}
